@@ -6,6 +6,7 @@ class Course(models.Model):
     name = models.CharField(max_length=150, verbose_name='название')
     image = models.ImageField(upload_to='course/', verbose_name='картинка', null=True, blank=True)
     description = models.TextField(verbose_name='описание')
+    video_url = models.URLField(verbose_name='ссылка на видео', null=True, blank=True)
     owner = models.ForeignKey('users.User', on_delete=models.CASCADE, verbose_name='владелец', null=True, blank=True)
 
     def __str__(self):
@@ -47,3 +48,13 @@ class Payment(models.Model):
     class Meta:
         verbose_name = 'платеж'
         verbose_name_plural = 'платежи'
+
+
+class CourseSubscription(models.Model):
+    user = models.ForeignKey('users.User', on_delete=models.CASCADE, verbose_name='пользователь')
+    course = models.ForeignKey('Course', on_delete=models.CASCADE, verbose_name='курс')
+
+    class Meta:
+        verbose_name = 'подписка'
+        verbose_name_plural = 'подписки'
+        unique_together = ('user', 'course')

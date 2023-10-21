@@ -26,4 +26,14 @@ class IsOwner(permissions.BasePermission):
         return obj.owner == request.user
 
 
+class CanCreateCourse(permissions.BasePermission):
+    def has_permission(self, request, view):
+        return request.method == 'POST'
+
+
+class CanViewCourse(permissions.BasePermission):
+    def has_permission(self, request, view):
+        return request.method == 'GET'
+
+
 
