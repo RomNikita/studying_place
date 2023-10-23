@@ -3,12 +3,10 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from main.filters import PaymentFilter
 from main.models import Course, Lesson, Payment, CourseSubscription
 from main.paginators import MyPaginator
-from main.permissions import IsModerator, CanChangeCourse, CannotCreateCourse, CannotDeleteCourse, IsOwner, \
-    CanCreateCourse, CanViewCourse
-from main.serializers import CourseSerializer, LessonSerializer, PaymentSerializer
+from main.permissions import IsModerator, CanChangeCourse, CannotCreateCourse, CannotDeleteCourse, IsOwner
+from main.serializers import CourseSerializer, LessonSerializer
 
 
 class CourseViewSet(viewsets.ModelViewSet):
@@ -89,15 +87,6 @@ class LessonDestroyAPIView(generics.DestroyAPIView):
             if IsModerator().has_permission(self.request, self):
                 return [CanChangeCourse(), CannotCreateCourse(), CannotDeleteCourse()]
         return []
-
-
-# payment
-
-class PaymentViewSet(viewsets.ModelViewSet):
-    serializer_class = PaymentSerializer
-    queryset = Payment.objects.all()
-    filter_class = PaymentFilter
-    ordering_fields = ['date']
 
 
 # subscription

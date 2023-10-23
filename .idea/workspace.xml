@@ -4,19 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="396565f7-2881-4a43-9f77-49e2bc5c5598" name="Changes" comment="hw 3">
-      <change afterPath="$PROJECT_DIR$/main/migrations/0009_course_video_url.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/migrations/0010_coursesubscription.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/paginators.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/validators.py" afterDir="false" />
+    <list default="true" id="396565f7-2881-4a43-9f77-49e2bc5c5598" name="Changes" comment="hw 4 and fix hw3">
+      <change afterPath="$PROJECT_DIR$/payment/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/permissions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/permissions.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/permissions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/filters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/management/commands/csu.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/commands/csu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +59,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python tests.Python tests for tests.CourseSubscriptionTests.test_subscribe_to_course">
+  <component name="RunManager" selected="Python.manage">
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="studying_place" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -124,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697655226364</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="hw 4 and fix hw3">
+      <option name="closed" value="true" />
+      <created>1697904997541</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697904997541</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,6 +153,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="hw 1" />
     <MESSAGE value="hw 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="hw 3" />
+    <MESSAGE value="hw 4 and fix hw3" />
+    <option name="LAST_COMMIT_MESSAGE" value="hw 4 and fix hw3" />
   </component>
 </project>
