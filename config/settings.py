@@ -13,6 +13,8 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
+from celery.schedules import crontab
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,7 +45,8 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework_simplejwt',
     'drf_yasg',
-    'corsheaders'
+    'corsheaders',
+    'django_celery_beat'
 ]
 
 MIDDLEWARE = [
@@ -160,3 +163,33 @@ CSRF_TRUSTED_ORIGINS = [
 
 
 STRIPE_SECRET_KEY = 'sk_test_51O43zALWz7XRjlkGZtDtVtJ7zrGc2k1laeXpUfVkaQ1dgvb0rQK7jFf76LTeP6fIQb5YMDTquA1jbF4I1rZVDXsr00I2HEri7u'
+
+
+CELERY_BROKER_URL = 'redis://localhost:6379' # Например, Redis, который по умолчанию работает на порту 6379
+
+# URL-адрес брокера результатов, также Redis
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+
+# Часовой пояс для работы Celery
+CELERY_TIMEZONE = "Australia/Tasmania"
+
+# Флаг отслеживания выполнения задач
+CELERY_TASK_TRACK_STARTED = True
+
+# Максимальное время на выполнение задачи
+CELERY_TASK_TIME_LIMIT = 30 * 60
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'noreplyskypro9@gmail.com'
+EMAIL_HOST_PASSWORD = 'dpgb dlcy lwvz keya'
+EMAIL_USE_SSL = False
+EMAIL_USE_TLS = True
+
+CELERY_BEAT_SCHEDULE = {
+    'check_inactive_users': {
+        'task': 'myapp.tasks.check_last_login',
+        'schedule': crontab(minute=0, hour=0),
+    },
+}

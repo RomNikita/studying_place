@@ -7,6 +7,7 @@ from main.models import Course, Lesson, Payment, CourseSubscription
 from main.paginators import MyPaginator
 from main.permissions import IsModerator, CanChangeCourse, CannotCreateCourse, CannotDeleteCourse, IsOwner
 from main.serializers import CourseSerializer, LessonSerializer
+from main.tasks import send_mail_for_subs
 
 
 class CourseViewSet(viewsets.ModelViewSet):
@@ -25,6 +26,8 @@ class CourseViewSet(viewsets.ModelViewSet):
         new_course = serializer.save()
         new_course.owner = self.request.user
         new_course.save()
+
+        send_mail_for_subs.delay(new_course)
 
 
 class LessonCreateAPIView(generics.CreateAPIView):
