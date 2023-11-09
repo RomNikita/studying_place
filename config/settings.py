@@ -86,11 +86,15 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'studying_place',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': '12345'
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432
+
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -151,7 +155,6 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
-
 CORS_ALLOWED_ORIGINS = [
     "https://read-only.example.com",
     "https://read-and-write.example.com",
@@ -161,11 +164,9 @@ CSRF_TRUSTED_ORIGINS = [
     "https://read-and-write.example.com",
 ]
 
-
 STRIPE_SECRET_KEY = 'sk_test_51O43zALWz7XRjlkGZtDtVtJ7zrGc2k1laeXpUfVkaQ1dgvb0rQK7jFf76LTeP6fIQb5YMDTquA1jbF4I1rZVDXsr00I2HEri7u'
 
-
-CELERY_BROKER_URL = 'redis://localhost:6379' # Например, Redis, который по умолчанию работает на порту 6379
+CELERY_BROKER_URL = 'redis://localhost:6379'  # Например, Redis, который по умолчанию работает на порту 6379
 
 # URL-адрес брокера результатов, также Redis
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
@@ -178,7 +179,6 @@ CELERY_TASK_TRACK_STARTED = True
 
 # Максимальное время на выполнение задачи
 CELERY_TASK_TIME_LIMIT = 30 * 60
-
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
