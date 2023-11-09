@@ -166,7 +166,7 @@ CSRF_TRUSTED_ORIGINS = [
 
 STRIPE_SECRET_KEY = 'sk_test_51O43zALWz7XRjlkGZtDtVtJ7zrGc2k1laeXpUfVkaQ1dgvb0rQK7jFf76LTeP6fIQb5YMDTquA1jbF4I1rZVDXsr00I2HEri7u'
 
-CELERY_BROKER_URL = 'redis://localhost:6379'  # Например, Redis, который по умолчанию работает на порту 6379
+CELERY_BROKER_URL = 'redis://redis:6379/0'  # Например, Redis, который по умолчанию работает на порту 6379
 
 # URL-адрес брокера результатов, также Redis
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
